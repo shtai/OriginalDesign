@@ -9,7 +9,7 @@ void draw()
 	cloud();
 	mountain();
 	water();
-	dratini();
+	wave();
 }
 
 void sun()
@@ -58,10 +58,21 @@ void mountain()
 	triangle (100, 200, 240, 100, 350, 200); //right mountain
 }
 
-void dratini()
+void wave()
 {
-	strokeWeight(1);
-	stroke(0, 0, 0);
-	noFill();
-	bezier(150, 200, 300, 300, 20, 100, 100, 200);
+	int waveY2 = 220;
+	int waveY3 = 260;
+	stroke(255, 170);
+	strokeWeight(2);
+	bezier(20, 240, 80, waveY2, 100, waveY3, 150, 240);
+
+	while (waveY2 <= 260)
+	{
+		waveY2 = waveY2 + 1;
+	}
+
+	while (waveY2 >= 220)
+	{
+		waveY2 = waveY2 - 1;
+	}
 }
