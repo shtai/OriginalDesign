@@ -12,7 +12,7 @@ void draw()
 	cloud();
 	mountain();
 	water();
-	wave();
+	//wave(); WAVE ADD LATER WHEN ANIMATION IS FINISHED
 }
 
 void sun()
@@ -68,12 +68,11 @@ void wave()
 	bezier(20, 240, 80, waveY2, 100, waveY3, 150, 240);
 
 	waveY2 = waveY2 + 1;
-	if (waveY2 > 260)
+	if (waveY2 >= 260)
 	{
 		waveY2 = waveY2 - 1;
 	}
-
-	if (waveY2 < 220)
+	if (waveY2 <= 220)
 	{
 		waveY2 = waveY2 + 1;
 	}
