@@ -1,4 +1,7 @@
- void setup()
+int waveY2 = 220;
+int waveY3 = 260;
+
+void setup()
 {
   size(300, 300);
 }
@@ -60,19 +63,18 @@ void mountain()
 
 void wave()
 {
-	int waveY2 = 220;
-	int waveY3 = 260;
 	stroke(255, 170);
 	strokeWeight(2);
 	bezier(20, 240, 80, waveY2, 100, waveY3, 150, 240);
 
-	while (waveY2 <= 260)
-	{
-		waveY2 = waveY2 + 1;
-	}
-
-	while (waveY2 >= 220)
+	waveY2 = waveY2 + 1;
+	if (waveY2 > 260)
 	{
 		waveY2 = waveY2 - 1;
+	}
+
+	if (waveY2 < 220)
+	{
+		waveY2 = waveY2 + 1;
 	}
 }
